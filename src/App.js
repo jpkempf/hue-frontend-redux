@@ -16,7 +16,7 @@ class App extends Component {
             api.GROUPS.GET_ALL(),
             api.LIGHTS.GET_ALL(),
         ]).then(
-            ([groups, lights]) => this.setState({ groups, lights})
+            ([ groups, lights ]) => this.setState({ groups, lights })
         )
     }
 
