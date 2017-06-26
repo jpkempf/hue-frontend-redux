@@ -1,18 +1,18 @@
 import api from './../config/api'
-import presets from './../config/presets'
+import { PRESETS } from './../config/presets'
 import React from 'react'
 
 const Presets = ({
     target,
     type,
 }) => {
-    const presetKeys = Object.keys(presets)
+    const presetKeys = Object.keys(PRESETS)
     const onClick = api[type].PRESET
 
     return (
         <div className="presets">
             { presetKeys.map(key => {
-                const preset = presets[key]
+                const preset = PRESETS[key]
 
                 return <button
                     key={key}

@@ -1,3 +1,4 @@
+import { PRESET_TYPES } from './../config/presets'
 import Presets from './Presets'
 import React from 'react'
 
@@ -21,7 +22,7 @@ const Light = ({
             <button style={style} onClick={onClick}>
                 Turn {currentState ? 'off' : 'on'}
             </button>
-            <Presets target={light} type={'LIGHTS'} />
+            <Presets target={light} type={PRESET_TYPES.LIGHTS} />
         </div>
     )
 }

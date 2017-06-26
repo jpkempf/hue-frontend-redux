@@ -1,4 +1,9 @@
-const PRESETS = {
+export const PRESET_TYPES = {
+    GROUPS: 'GROUPS',
+    LIGHTS: 'LIGHTS',
+}
+
+export const PRESETS = {
     BRIGHT: {
         name: "Bright",
         bri: 254,
@@ -27,5 +32,3 @@ const PRESETS = {
         hue: 7700,
     },
 }
-
-export default PRESETS

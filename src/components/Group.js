@@ -1,3 +1,4 @@
+import { PRESET_TYPES } from './../config/presets'
 import Presets from './Presets'
 import React from 'react'
 
@@ -24,7 +25,7 @@ const Group = ({
             >
                 Turn {currentState ? 'off' : 'on'}
             </button>
-            <Presets target={group} type={'GROUPS'} />
+            <Presets target={group} type={PRESET_TYPES.GROUPS} />
         </div>
     )
 }
