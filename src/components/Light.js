@@ -19,7 +19,10 @@ const Light = ({
     return (
         <div className="hueItem">
             <strong>{lightData.name}</strong>
-            <button style={style} onClick={onClick}>
+            <button
+                style={style}
+                onClick={onClick}
+            >
                 Turn {currentState ? 'off' : 'on'}
             </button>
             <Presets target={light} type={PRESET_TYPES.LIGHTS} />
