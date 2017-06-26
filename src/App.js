@@ -3,6 +3,8 @@ import Group from './components/Group'
 import Light from './components/Light'
 import './style/style.css'
 
+const REFRESH_INTERVAL = 5000;
+
 class App extends Component {
     constructor (props) {
         super(props)
@@ -15,6 +17,10 @@ class App extends Component {
 
     componentDidMount () {
         this._getGroupsAndLights()
+
+        setInterval(() => {
+            this._getGroupsAndLights()
+        }, REFRESH_INTERVAL)
     }
 
     _getGroupsAndLights () {
