@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import './style/style.css'
+import api from './config/api'
 import Group from './components/Group'
 import Light from './components/Light'
-import './style/style.css'
+import React, { Component } from 'react'
 
 const REFRESH_INTERVAL = 5000;
 
@@ -25,20 +26,20 @@ class App extends Component {
 
     _getGroupsAndLights () {
         Promise.all([
-            this.props.api.GROUPS.GET_ALL(),
-            this.props.api.LIGHTS.GET_ALL(),
+            api.GROUPS.GET_ALL(),
+            api.LIGHTS.GET_ALL(),
         ]).then(
             ([ groups, lights ]) => this.setState({ groups, lights })
         )
     }
 
     async toggleGroup (id) {
-        await this.props.api.GROUPS.TOGGLE(id)
+        await api.GROUPS.TOGGLE(id)
         this._getGroupsAndLights()
     }
 
     async toggleLight (id) {
-        await this.props.api.LIGHTS.TOGGLE(id)
+        await api.LIGHTS.TOGGLE(id)
         this._getGroupsAndLights()
     }
 
