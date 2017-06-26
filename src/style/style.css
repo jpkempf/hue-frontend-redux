@@ -10,7 +10,19 @@
     display: grid;
     margin: .5em;
     grid-gap: .5em;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+}
+
+@media all and (min-width: 45em) {
+    .wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media all and (min-width: 65em) {
+    .wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 .presets {
@@ -24,12 +36,6 @@
     padding: .25em;
     border: 1px solid lightgrey;
     background: transparent;
-}
-
-@media all and (min-width: 50em) {
-    .wrapper {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
 }
 
 .hueItem {
