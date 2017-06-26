@@ -33,6 +33,16 @@ export const GROUPS = {
     HUE (groupId, value) {
         return updateGroup(groupId, `{ "hue": ${value} }`)
     },
+
+    PRESET (groupId, preset) {
+        const { bri, hue, sat } = preset
+
+        return updateGroup(groupId, `{
+            "bri": ${bri},
+            "hue": ${hue},
+            "sat": ${sat}
+        }`)
+    },
 }
 
 export const LIGHTS = {
@@ -49,7 +59,17 @@ export const LIGHTS = {
         const currentState = light.state.on
         const newState = (!currentState).toString()
         return updateLight(lightId, `{ "on": ${newState} }`)
-    }
+    },
+
+    PRESET (lightId, preset) {
+        const { bri, hue, sat } = preset
+
+        return updateLight(lightId, `{
+            "bri": ${bri},
+            "hue": ${hue},
+            "sat": ${sat}
+        }`)
+    },
 }
 
 export default { GROUPS, LIGHTS }

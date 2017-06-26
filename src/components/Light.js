@@ -1,3 +1,4 @@
+import Presets from './Presets'
 import React from 'react'
 
 const Light = ({
@@ -20,6 +21,7 @@ const Light = ({
             <button style={style} onClick={onClick}>
                 Turn {currentState ? 'off' : 'on'}
             </button>
+            <Presets target={light} type={'LIGHTS'} />
         </div>
     )
 }

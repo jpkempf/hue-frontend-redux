@@ -13,6 +13,19 @@
     grid-template-columns: 1fr 1fr;
 }
 
+.presets {
+    display: grid;
+    margin: .25em;
+    grid-gap: .25em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.presets > button {
+    padding: .25em;
+    border: 1px solid lightgrey;
+    background: transparent;
+}
+
 @media all and (min-width: 50em) {
     .wrapper {
         grid-template-columns: 1fr 1fr 1fr;

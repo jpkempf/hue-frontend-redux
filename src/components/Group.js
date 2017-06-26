@@ -1,3 +1,4 @@
+import Presets from './Presets'
 import React from 'react'
 
 const Group = ({
@@ -17,9 +18,13 @@ const Group = ({
     return (
         <div className="hueItem">
             <strong>{groupData.name}</strong>
-            <button style={style} onClick={onClick}>
+            <button
+                style={style}
+                onClick={onClick}
+            >
                 Turn {currentState ? 'off' : 'on'}
             </button>
+            <Presets target={group} type={'GROUPS'} />
         </div>
     )
 }
