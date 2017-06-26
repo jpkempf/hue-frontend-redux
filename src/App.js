@@ -1,23 +1,39 @@
 import React, { Component } from 'react'
-import api from './config/api'
+import Group from './components/Group'
+import Light from './components/Light'
+import './style/style.css'
 
 class App extends Component {
-    constructor(props) {
+    constructor (props) {
         super(props)
 
         this.state = {
-            groups: null,
-            lights: null,
+            groups: [],
+            lights: [],
         }
     }
 
-    componentDidMount() {
+    componentDidMount () {
+        this._getGroupsAndLights()
+    }
+
+    _getGroupsAndLights () {
         Promise.all([
-            api.GROUPS.GET_ALL(),
-            api.LIGHTS.GET_ALL(),
+            this.props.api.GROUPS.GET_ALL(),
+            this.props.api.LIGHTS.GET_ALL(),
         ]).then(
             ([ groups, lights ]) => this.setState({ groups, lights })
         )
+    }
+
+    async toggleGroup (id) {
+        await this.props.api.GROUPS.TOGGLE(id)
+        this._getGroupsAndLights()
+    }
+
+    async toggleLight (id) {
+        await this.props.api.LIGHTS.TOGGLE(id)
+        this._getGroupsAndLights()
     }
 
     render() {
@@ -25,21 +41,21 @@ class App extends Component {
 
         return (
             <div>
-                { groups && groups.map(group => <div key={group.id}>
-                    <button onClick={() => api.GROUPS.TOGGLE(group.id)}>
-                        Toggle all { group.state.name } lights
-                    </button>
-                    <br />
-                </div> )}
-
+                <div className="wrapper">
+                    { groups.map(group => <Group
+                        key={group.id}
+                        group={group}
+                        onClick={() => this.toggleGroup(group.id)}
+                    />)}
+                </div>
                 <hr />
-
-                { lights && lights.map(light => <div key={light.id}>
-                    <button onClick={() => api.LIGHTS.TOGGLE(light.id)}>
-                        Toggle light "{light.state.name}"
-                    </button>
-                    <br />
-                </div> )}
+                <div className="wrapper">
+                    { lights.map(light => <Light
+                        key={light.id}
+                        light={light}
+                        onClick={() => this.toggleLight(light.id)}
+                    />)}
+                </div>
             </div>
         )
     }
