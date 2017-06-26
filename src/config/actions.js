@@ -1,3 +1,5 @@
+/* i am not using these AT ALL! maybe some day? */
+
 export const GROUPS = {
     GET_ALL: 'GET_ALL_GROUPS',
     GET: 'GET_GROUP',
