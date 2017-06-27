@@ -1,6 +1,7 @@
-import api from './../config/api'
-import { PRESETS } from './../config/presets'
 import React from 'react'
+
+import { PRESETS } from './../config/presets'
+import api from './../config/api'
 
 const Presets = ({
     target,

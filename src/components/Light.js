@@ -1,6 +1,7 @@
+import React from 'react'
+
 import { PRESET_TYPES } from './../config/presets'
 import Presets from './Presets'
-import React from 'react'
 
 const Light = ({
     light,

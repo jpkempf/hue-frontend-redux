@@ -1,8 +1,8 @@
-import './style/style.css'
+import React, { Component } from 'react'
+
 import api from './config/api'
 import Group from './components/Group'
 import Light from './components/Light'
-import React, { Component } from 'react'
 
 const REFRESH_INTERVAL = 5000;
 

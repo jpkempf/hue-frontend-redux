@@ -13,7 +13,7 @@
     grid-template-columns: 1fr;
 }
 
-@media all and (min-width: 45em) {
+@media all and (min-width: 42em) {
     .wrapper {
         grid-template-columns: 1fr 1fr;
     }
@@ -27,7 +27,6 @@
 
 .presets {
     display: grid;
-    margin: .25em;
     grid-gap: .25em;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
