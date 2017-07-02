@@ -38,6 +38,7 @@ export const GROUPS = {
         const { bri, hue, sat } = preset
 
         return updateGroup(groupId, `{
+            "on": true,
             "bri": ${bri},
             "hue": ${hue},
             "sat": ${sat}
@@ -65,6 +66,7 @@ export const LIGHTS = {
         const { bri, hue, sat } = preset
 
         return updateLight(lightId, `{
+            "on": true,
             "bri": ${bri},
             "hue": ${hue},
             "sat": ${sat}
