@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 
 import api from './config/api'
-import Group from './components/Group'
-import Light from './components/Light'
+import { Group, Light } from './components/Item'
 
 const REFRESH_INTERVAL = 5000;
 
