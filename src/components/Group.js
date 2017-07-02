@@ -8,23 +8,23 @@ const Group = ({
     onClick,
 }) => {
     const { state: groupData } = group
-    const currentState = groupData.state.all_on
+    const isGroupOn = groupData.state.all_on
     const style = {
         display: 'block',
         width: '100%',
-        backgroundColor: currentState ? 'yellow' : 'lightgrey',
+        backgroundColor: isGroupOn ? 'yellow' : 'lightgrey',
+        fontWeight: isGroupOn ? 'bold' : 'normal',
         border: 0,
         padding: '1em',
     }
 
     return (
         <div className="hueItem">
-            <strong>{groupData.name}</strong>
             <button
                 style={style}
                 onClick={onClick}
             >
-                Turn {currentState ? 'off' : 'on'}
+                {groupData.name}
             </button>
             <Presets target={group} type={PRESET_TYPES.GROUPS} />
         </div>

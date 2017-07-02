@@ -29,8 +29,18 @@ class App extends Component {
             api.GROUPS.GET_ALL(),
             api.LIGHTS.GET_ALL(),
         ]).then(
-            ([ groups, lights ]) => this.setState({ groups, lights })
+            ([ groups, lights ]) => {
+                this.setState({
+                    groups: this._sortItemsByName(groups),
+                    lights: this._sortItemsByName(lights),
+                })
+            }
         )
+    }
+
+    _sortItemsByName (items) {
+        return items.sort((prev, next) =>
+            prev.state.name > next.state.name)
     }
 
     async toggleGroup (id) {

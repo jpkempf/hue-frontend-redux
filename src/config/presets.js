@@ -1,3 +1,6 @@
+const HUE_YELLOW = 8402
+const SAT_MEDIUM = 140
+
 export const PRESET_TYPES = {
     GROUPS: 'GROUPS',
     LIGHTS: 'LIGHTS',
@@ -14,21 +17,21 @@ export const PRESETS = {
     WARM: {
         name: "Warm",
         bri: 254,
-        sat: 200,
-        hue: 7700,
+        sat: SAT_MEDIUM,
+        hue: HUE_YELLOW,
     },
 
     DIMMED: {
         name: "Dimmed",
-        bri: 100,
-        sat: 200,
-        hue: 7700,
+        bri: 77,
+        sat: SAT_MEDIUM,
+        hue: HUE_YELLOW,
     },
 
     NIGHTLIGHT: {
         name: "Nightlight",
-        bri: 50,
-        sat: 254,
-        hue: 7700,
+        bri: 1,
+        sat: SAT_MEDIUM,
+        hue: HUE_YELLOW,
     },
 }
