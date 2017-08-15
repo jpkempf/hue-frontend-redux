@@ -28,8 +28,8 @@ export const PRESETS = {
         hue: HUE_YELLOW,
     },
 
-    NIGHTLIGHT: {
-        name: "Nightlight",
+    NIGHT: {
+        name: "Night",
         bri: 1,
         sat: SAT_MEDIUM,
         hue: HUE_YELLOW,
