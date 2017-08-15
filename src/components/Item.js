@@ -21,7 +21,7 @@ const renderItem = (style, item, onClickFn, presetType) => {
                 style={style}
                 onClick={onClickFn}
             >
-                {item.state.name}
+                {item.name}
             </button>
             <Presets target={item} type={presetType} />
         </div>
@@ -33,7 +33,7 @@ export const Group = ({
     onClick,
 }) => {
     return renderItem(
-        generateStyles(group.state.state.all_on),
+        generateStyles(group.state.all_on),
         group,
         onClick,
         PRESET_TYPES.GROUPS,
@@ -45,7 +45,7 @@ export const Light = ({
     onClick,
 }) => {
     return renderItem(
-        generateStyles(light.state.state.on),
+        generateStyles(light.state.on),
         light,
         onClick,
         PRESET_TYPES.LIGHTS,

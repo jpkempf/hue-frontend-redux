@@ -8,11 +8,9 @@ export async function getGroupsOrLights (endpoint) {
     const groupsOrLights = []
 
     for (let itemId in jsonObject) {
-        const dataOrState = jsonObject['data'] ? 'data' : 'state'
-
         groupsOrLights.push({
             id: itemId,
-            [dataOrState]: jsonObject[itemId],
+            ...jsonObject[itemId],
         })
     }
 
